@@ -1,0 +1,16 @@
+Usage: java Solver <spuddfile> [<flags>]
+where: 
+	 spuddfile (required): name of POMDP input file in SPUDD format
+	 flags can be one of :
+		 -g 	 - generate policy
+		 -i [filename]	 - read input policy from filename (default <spuddfile base name>.pomdp
+				   if -i is not given, the poilcy is generated and writted to <spuddfile base name>.pomdp)
+		 -j 	 - input contains multiple initial states as adjuncts and these should be used
+		 -s <int>	 - do simulation for <int> iterations (with generated or read policy if available, or with user input if not
+		 -b <int>	 - number of belief points to use [100]
+		 -m <int>	 - max number of alpha vectors [100]
+		 -t <int>	 - number of iterations of symbolic Perseus per round [30]
+		 -e <int>	 - episode length to use when generating belief points [50]
+		 -x <double>	 - exploration probability to use when generating belief points [0.4]
+		 -h <double>	 - threshold for beliefs [0.001]
+		 -r <int>	 - number of rounds to run [5]
