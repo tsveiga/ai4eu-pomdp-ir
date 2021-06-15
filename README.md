@@ -1,6 +1,6 @@
 # ai4eu-pomdp-ir
 
-This repository implements a simple interface with the POMDP with Inforamtion Rewards (POMDP-IR) solver.
+This repository implements a simple interface with the POMDP with Information Rewards (POMDP-IR) solver.
 
 # Running
 ## 1) Run the server with the solver
