@@ -35,5 +35,5 @@ If at some point, one wants to restart the execution, this script connects to th
 
 **Notes**: 
 - the client needs protobuf and grpcio-tools python packages installed.
-- the current version of the server is restricted to a patrolling model, which is included in the container. Future works includes to allow the user to pass model files into the container.
+- the current version of the server is restricted to a patrolling model, which is included in the container. Future versions will allow the user to pass model files into the container.
 
