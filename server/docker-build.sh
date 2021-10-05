@@ -1,1 +1,1 @@
-docker build -t pomdp-ir-java .
+docker build -t pomdp-ir .

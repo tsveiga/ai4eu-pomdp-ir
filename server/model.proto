@@ -5,44 +5,33 @@ package pomdpir;
 
 //The first step is to solve the model and compute a policy
 message ComputePolicyRequest {
-	int32 nRounds = 1 ;
-	int32 numBelStates = 2 ;
-	int32 maxBelStates = 3;
-	int32 episodeLength = 4 ;
-	float threshold = 5 ;
-	float explorProb = 6 ;
-	int32 nIterations = 7 ;
-	int32 maxAlphaSetSize = 8 ;
+  int32 nRounds = 1 ;
+  int32 numBelStates = 2 ;
+  int32 maxBelStates = 3;
+  int32 episodeLength = 4 ;
+  float threshold = 5 ;
+  float explorProb = 6 ;
+  int32 nIterations = 7 ;
+  int32 maxAlphaSetSize = 8 ;
 
-}
-
-message ComputePolicyResponse {
-	int32 some_output = 1 ;
-}
-
-//Then, the user might want to send a command to start execution
-message ResetExecutionRequest {
-	bool some_input = 1 ;
-}
-
-message ResetExecutionResponse {
-    bool some_output = 1 ;
 }
 
 //Finally, at execution time the user wants to query the policy to obtain an action. For that he must send an observation
 message StepRequest {
-    repeated int32 observations = 1 ;
+  repeated int32 observations = 1 ;
 }
 
 message StepResponse {
-    int32 action = 1 ;
-    string action_name = 2 ;
+  int32 action = 1 ;
+  string action_name = 2 ;
 }
 
+message Empty {
+}
 
 //Define the service
 service POMDPIR {
-  rpc compute_policy(ComputePolicyRequest) returns (ComputePolicyResponse);
-  rpc reset_execution(ResetExecutionRequest) returns(ResetExecutionResponse);
+  rpc compute_policy(ComputePolicyRequest) returns (Empty);
+  rpc reset_execution(Empty) returns(Empty);
   rpc step(StepRequest) returns(StepResponse);
 }

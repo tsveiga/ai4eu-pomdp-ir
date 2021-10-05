@@ -16,7 +16,7 @@ channel = grpc.insecure_channel(port_addr)
 # create a stub (client)
 stub = model_pb2_grpc.POMDPIRStub(channel)
 
-resetExecInit = model_pb2.ResetExecutionRequest(some_input = 1)
+resetExecInit = model_pb2.Empty()
 
 response = stub.reset_execution(resetExecInit)
 

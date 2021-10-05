@@ -1,4 +1,3 @@
-from random import randint
 from timeit import default_timer as timer
 
 import grpc
