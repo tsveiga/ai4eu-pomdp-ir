@@ -1,6 +1,6 @@
 # ai4eu-pomdp-ir
 
-This repository implements a simple interface with the POMDP with Inforamtion Rewards (POMDP-IR) solver.
+This repository implements a simple interface with the POMDP with Information Rewards (POMDP-IR) solver.
 
 # Running
 ## 1) Run the server with the solver
@@ -35,5 +35,5 @@ If at some point, one wants to restart the execution, this script connects to th
 
 **Notes**: 
 - the client needs protobuf and grpcio-tools python packages installed.
-- the current version of the server is restricted to a patrolling model, which is included in the container. Future works includes to allow the user to pass model files into the container.
+- the current version of the server is restricted to a patrolling model, which is included in the container. Future versions will allow the user to pass model files into the container. Alternatively, the user can re-build the container with his own model file, by changing the file Dockerfile accordingly.
 
