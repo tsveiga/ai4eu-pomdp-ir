@@ -10,6 +10,15 @@ First, the docker container needs to be built.
 Then, we can launch the service
 `./docker-run.sh`
 
+## 1.1) Copy the environment model to the container
+Before running any of the clients one needs to input the environment model to be used by the solver. Currently this is manually done using the copy commands both from docker or kubernetes.
+
+If running the container with docker:
+`docker cp <orig_file> <container_id>:<dest_file>`
+
+If running through the AI4EU Acumos Experiments platform, deployed on Kubernetes:
+`kubectl cp <orig_file> <namespace_id>/<pod_id>:<dest_file>
+
 ## 2) Run the client
 Before running the clients, it is needed to copy the protobuf message definitions to its folder and compile locally (the client needs to be aware of the message types)
 `cd ../client && ./populate_and_rebuild_protobuf.sh`
@@ -18,7 +27,7 @@ There are three client scripts, detailed as follows.
 
 ### 2.1) Init the solver
 
-The first script connects to the service which computes the policy. It sends a request with the solver parameters (check the ComputePolicyRequest message definition for which parameters) and waits for the solver to compute the policy.
+The first script connects to the service which computes the policy. It sends a request with the solver parameters (check the ComputePolicyRequest message definition for which parameters) and waits for the solver to compute the policy. The user must manually tune the parameters in the client script.
 `python3 pomdp_ir_init_client.py`
 
 ### 2.2) Query actions (step)
@@ -35,5 +44,4 @@ If at some point, one wants to restart the execution, this script connects to th
 
 **Notes**: 
 - the client needs protobuf and grpcio-tools python packages installed.
-- the current version of the server is restricted to a patrolling model, which is included in the container. Future versions will allow the user to pass model files into the container. Alternatively, the user can re-build the container with his own model file, by changing the file Dockerfile accordingly.
 
