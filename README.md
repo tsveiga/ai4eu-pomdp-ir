@@ -17,7 +17,7 @@ If running the container with docker:
 `docker cp <orig_file> <container_id>:<dest_file>`
 
 If running through the AI4EU Acumos Experiments platform, deployed on Kubernetes:
-`kubectl cp <orig_file> <namespace_id>/<pod_id>:<dest_file>
+`kubectl cp <orig_file> <namespace_id>/<pod_id>:<dest_file>`
 
 ## 2) Run the client
 Before running the clients, it is needed to copy the protobuf message definitions to its folder and compile locally (the client needs to be aware of the message types)
